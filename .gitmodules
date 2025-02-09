@@ -1,0 +1,6 @@
+[submodule "private/snippets"]
+	path = private/snippets
+	url = https://github.com/veracioux/snippets
+[submodule "private/themes/dracula-emacs"]
+	path = private/themes/dracula-emacs
+	url = https://github.com/veracioux/dracula-emacs
