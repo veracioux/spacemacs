@@ -142,7 +142,7 @@
 
 (defun spacemacs-modeline/pre-init-spaceline-all-the-icons ()
   (when (eq 'all-the-icons (spacemacs/get-mode-line-theme-name))
-    (spacemacs|use-package-add-hook spaceline-config
+    (spacemacs|use-package-add-hook spaceline
       :pre-config
       (progn
         (require 'spaceline-all-the-icons)

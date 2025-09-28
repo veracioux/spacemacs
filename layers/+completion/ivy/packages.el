@@ -135,13 +135,7 @@
       "srf" 'spacemacs/search-rg
       "srF" 'spacemacs/search-rg-region-or-symbol
       "srp" 'spacemacs/search-project-rg
-      "srP" 'spacemacs/search-project-rg-region-or-symbol
-      "std" 'spacemacs/search-dir-pt
-      "stD" 'spacemacs/search-dir-pt-region-or-symbol
-      "stf" 'spacemacs/search-pt
-      "stF" 'spacemacs/search-pt-region-or-symbol
-      "stp" 'spacemacs/search-project-pt
-      "stP" 'spacemacs/search-project-pt-region-or-symbol)
+      "srP" 'spacemacs/search-project-rg-region-or-symbol)
     :config
     ;; Temporarily handle older versions of ivy
     ;; https://github.com/abo-abo/swiper/pull/1863/files
@@ -405,7 +399,11 @@
     :defer t
     :init (setq-default amx-history-length 32
                         amx-save-file (concat spacemacs-cache-directory
-                                              ".amx-items"))))
+                                              ".amx-items")
+                        ;; Set `smex-save-file' so that `amx' can migrate any
+                        ;; existing history.  See `amx-load-save-file'.
+                        smex-save-file (concat spacemacs-cache-directory
+                                               ".smex-items"))))
 
 (defun ivy/init-swiper ()
   (use-package swiper
